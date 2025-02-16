@@ -15,7 +15,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="flex flex-col items-center w-[95%] mx-auto text-text-dark">
+    <div className="flex flex-col items-center w-[95%]  mx-auto text-text-dark">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

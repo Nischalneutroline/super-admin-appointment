@@ -32,7 +32,7 @@ const SigninForm = () => {
   }
 
   return (
-    <div className="relative flex flex-col min-w-sm ">
+    <div className="relative flex flex-col justify-center min-w-sm ">
       {/*------------ Heading */}
       <div>
         <p className="text-xl font-bold">ADMIN SIGNIN</p>
@@ -43,7 +43,7 @@ const SigninForm = () => {
 
       {/*------------- Form */}
 
-      <form className="space-y-4 mt-5" onSubmit={onSubmit}>
+      <form className="space-y-6 mt-6" onSubmit={onSubmit}>
         {/* ++++++ Email */}
         <div className="flex flex-col gap-0.5">
           <label className="flex justify-start ml-1" htmlFor="email">

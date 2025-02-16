@@ -4,9 +4,10 @@ import React from "react"
 
 function Image() {
   return (
-    <div className="min-w-xs max-w-sm align-super ">
+    <div className="min-w-xs max-w-sm ">
       <img
-        className="mx-auto w-[300px] md:w-[600px] md:h-[600px] md:px-0 object-cover"
+        // className="mx-auto w-[300px] md:w-[600px] md:h-[500px] md:px-0 object-cover"
+        className="mx-auto md:py-14 w-[300px] md:w-[700px] md:h-[650px] md:px-0 object-cover"
         // className=" object-cover"
         src={neutrosys}
         alt="neutrosys"

@@ -12,8 +12,8 @@ import { useForm } from "react-hook-form"
 
 const ForgotPasswordForm = () => {
   // Track Email and Code Valid
-  const [validEmail, setValidEmail] = useState(false)
-  const [validCode, setValidCode] = useState(false)
+  const [validEmail, setValidEmail] = useState(true)
+  const [validCode, setValidCode] = useState(true)
   // Auth Error State
   const [authError, setAuthError] = useState("")
 
@@ -247,8 +247,24 @@ const ForgotPasswordForm = () => {
             }
             placeholder="Enter your email"
           />
+        </div>{" "}
+        {/* ++++++ Email */}
+        <div className="flex flex-col gap-1">
+          <label className="flex justify-start ml-2" htmlFor="email">
+            Verification Code
+          </label>
+          <input
+            className="h-12 rounded-lg shadow-sm placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent  "
+            type="email"
+            name="email"
+            id="email"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+            placeholder="Enter your email"
+          />
         </div>
-
         {/* ++++++++++ Sign up Button */}
         <div>
           <button

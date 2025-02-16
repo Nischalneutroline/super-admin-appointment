@@ -10,6 +10,8 @@ import { MdOutlineError } from "react-icons/md"
 // React Hook Form
 import { useForm } from "react-hook-form"
 
+// Cn from utils
+import cn from "../../utils/cn"
 const SignupForm = () => {
   // Auth Error State
   const [authError, setAuthError] = useState("")
@@ -70,11 +72,14 @@ const SignupForm = () => {
       <form className="space-y-4 mt-5" onSubmit={handleSubmit(onSubmit)}>
         {/* +++++++++ Full Name */}
         <div className="flex flex-col gap-0.5">
-          <label className="flex justify-start ml-2" htmlFor="name">
+          <label className="flex justify-start ml-1" htmlFor="name">
             Full Name
           </label>
           <input
-            className="h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 "
+            className={cn(
+              "h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 ",
+              errors.fullName && "border-red-400"
+            )}
             type="name"
             name="name"
             id="name"
@@ -82,20 +87,23 @@ const SignupForm = () => {
             placeholder="Enter your full name"
           />
           {/* Error */}
-          {errors.fullName && (
+          {/* {errors.fullName && (
             <p className="text-xs text-red-600 text-start pl-2">
               {errors.fullName.message}
             </p>
-          )}
+          )} */}
         </div>
 
         {/* ++++++ Email */}
         <div className="flex flex-col gap-0.5">
-          <label className=" flex justify-start ml-2" htmlFor="email">
+          <label className=" flex justify-start ml-1" htmlFor="email">
             Email
           </label>
           <input
-            className="h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 "
+            className={cn(
+              "h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 ",
+              errors.email && "border-red-600"
+            )}
             type="email"
             name="email"
             id="email"
@@ -103,20 +111,23 @@ const SignupForm = () => {
             placeholder="Enter your email"
           />
           {/* Error Message */}
-          {errors.email && (
+          {/* {errors.email && (
             <p className="text-xs text-red-600 text-start pl-2">
               {errors.email.message}
             </p>
-          )}
+          )} */}
         </div>
 
         {/* +++++++++ Phone no */}
         <div className="flex flex-col gap-0.5">
-          <label className="flex justify-start ml-2" htmlFor="phone">
+          <label className="flex justify-start ml-1" htmlFor="phone">
             Phone
           </label>
           <input
-            className="h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 "
+            className={cn(
+              "h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 ",
+              errors.phone && "border-red-600"
+            )}
             type="phone"
             name="phone"
             id="phone"
@@ -124,11 +135,11 @@ const SignupForm = () => {
             placeholder="(123) 456-7890)"
           />
           {/* Error Message */}
-          {errors.phone && (
+          {/* {errors.phone && (
             <p className="text-xs text-red-600 text-start pl-2">
               {errors.phone.message}
             </p>
-          )}
+          )} */}
         </div>
         {/* +++++++++ Password */}
         <div className="flex flex-col gap-0.5">
@@ -137,7 +148,10 @@ const SignupForm = () => {
           </label>
           <div className="relative ">
             <input
-              className="w-full h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 "
+              className={cn(
+                "w-full h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 ",
+                errors.password && "border-red-600"
+              )}
               type={showPassword ? "text" : "password"}
               name="password"
               id="password"
@@ -159,20 +173,23 @@ const SignupForm = () => {
             </span>
 
             {/* Error Message */}
-            {errors.password && (
+            {/* {errors.password && (
               <p className="text-xs text-red-600 text-start pl-2">
                 {errors.password.message}
               </p>
-            )}
+            )} */}
           </div>
         </div>
         {/* +++++++++ Confirm Password */}
         <div className="flex flex-col gap-0.5">
-          <label className=" flex justify-start ml-2" htmlFor="confirmPassword">
+          <label className=" flex justify-start ml-1" htmlFor="confirmPassword">
             Confirm Password
           </label>
           <input
-            className="h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 "
+            className={cn(
+              "h-12 border border-[#e2e2e2] focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300 ",
+              errors.confirmPassword && "border-red-600"
+            )}
             type="password"
             name="confirmPassword"
             id="confirmPassword"
@@ -186,11 +203,11 @@ const SignupForm = () => {
             placeholder="Confrim password"
           />
           {/* Error Message */}
-          {errors.confirmPassword && (
+          {/* {errors.confirmPassword && (
             <p className="text-xs text-red-600 text-start pl-2">
               {errors.confirmPassword.message}
             </p>
-          )}
+          )} */}
         </div>
 
         {/* ++++++++++ Sign up Button */}
