@@ -4,7 +4,7 @@ import ForgorPasswordForm from "../../components/ForgotPassword/ForgotPasswordFo
 
 const ForgorPassword = () => {
   return (
-    <div className=" flex flex-col justify-center items-center text-center gap-4 md:flex-row md:gap-10 ">
+    <div className="flex flex-col border   justify-center  text-center gap-4 md:flex-row md:gap-8 lg:gap-20 ">
       <Image />
       <ForgorPasswordForm />
     </div>

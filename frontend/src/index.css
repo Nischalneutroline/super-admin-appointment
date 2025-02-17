@@ -3,4 +3,6 @@
 @theme {
   --color-text-dark: #333;
   --color-text-white: #fff;
+  --font-poppins: Poppins, sans-serif;
+  --font-custom: serif;
 }

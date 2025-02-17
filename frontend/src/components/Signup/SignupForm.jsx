@@ -60,7 +60,7 @@ const SignupForm = () => {
   }, [errors])
 
   return (
-    <div className="relative flex flex-col max-w-sm ">
+    <div className="px-2 relative flex flex-col max-w-sm ">
       {/*------------ Heading */}
       <div>
         <p className="text-xl font-bold">SUPER ADMIN SINGUP</p>
@@ -69,7 +69,7 @@ const SignupForm = () => {
 
       {/*------------- Form */}
 
-      <form className="space-y-4 mt-5" onSubmit={handleSubmit(onSubmit)}>
+      <form className="space-y-3 mt-5" onSubmit={handleSubmit(onSubmit)}>
         {/* +++++++++ Full Name */}
         <div className="flex flex-col gap-0.5">
           <label className="flex justify-start ml-1" htmlFor="name">
@@ -211,7 +211,7 @@ const SignupForm = () => {
         </div>
 
         {/* ++++++++++ Sign up Button */}
-        <div>
+        <div className="h-20 flex flex-col gap-2">
           {authError && (
             <p className="text-sm text-red-600 text-left flex gap-1 items-center">
               <MdOutlineError />
@@ -220,7 +220,7 @@ const SignupForm = () => {
           )}
           <button
             type="submit"
-            className="h-12 w-full bg-blue-600 rounded-lg text-white hover:opacity-90 hover:cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 active:translate-y-1 "
+            className="mt-auto h-12 w-full bg-blue-600 rounded-lg text-white hover:opacity-90 hover:cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 active:translate-y-1 "
             // disabled={!isValid}
           >
             Sign up

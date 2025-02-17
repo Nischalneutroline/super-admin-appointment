@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import Neutrologo from "../../assets/Neutroline_logo 3.png"
 
 const Header = () => (
-  <nav className="py-2">
+  <nav className="">
     {/* <ul className="w-md border flex gap-2 ">
       <li>
         <Link to="/">Home</Link>

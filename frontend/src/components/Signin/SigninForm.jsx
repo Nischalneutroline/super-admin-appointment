@@ -32,7 +32,7 @@ const SigninForm = () => {
   }
 
   return (
-    <div className="relative flex flex-col justify-center min-w-sm ">
+    <div className="px-2 relative flex flex-col justify-center md:min-w-sm ">
       {/*------------ Heading */}
       <div>
         <p className="text-xl font-bold">ADMIN SIGNIN</p>
@@ -43,7 +43,7 @@ const SigninForm = () => {
 
       {/*------------- Form */}
 
-      <form className="space-y-6 mt-6" onSubmit={onSubmit}>
+      <form className="space-y-4 mt-6" onSubmit={onSubmit}>
         {/* ++++++ Email */}
         <div className="flex flex-col gap-0.5">
           <label className="flex justify-start ml-1" htmlFor="email">
@@ -61,44 +61,47 @@ const SigninForm = () => {
             placeholder="Enter your email"
           />
         </div>
-        {/* +++++++++ Password */}
-        <div className="flex flex-col gap-0.5">
-          <label className="flex justify-start ml-1" htmlFor="password">
-            Password
-          </label>
-          <input
-            className="h-12 border border-[#e2e2e2]  focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300"
-            type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
-            placeholder="Enter your password"
-          />
-        </div>
-        {/* +++++++++ Remeber && Forgot Password */}
-        <div className="flex justify-between">
-          <div className="flex gap-2 ">
-            <input type="checkbox" id="remember" />
-            <label
-              htmlFor="remember"
-              className="text-gray-500 text-sm cursor-pointer"
-            >
-              Remember me
+
+        {/* Password and Forgot Password   */}
+        <div className="flex flex-col gap-2">
+          {/* +++++++++ Password */}
+          <div className="flex flex-col gap-0.5">
+            <label className="flex justify-start ml-1" htmlFor="password">
+              Password
             </label>
+            <input
+              className="h-12 border border-[#e2e2e2]  focus:border-[#b5b5b5] rounded-lg shadow-sm focus:shadow-md placeholder:text-sm pl-4 focus:outline-none focus:placeholder-transparent transition-all duration-300"
+              type="password"
+              name="password"
+              id="password"
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
+              placeholder="Enter your password"
+            />
           </div>
-          <Link to={"/forgot-password"}>
-            <p className="text-sm text-gray-500 hover:text-black text-right">
-              Forgot password?
-            </p>
-          </Link>
+          {/* +++++++++ Remeber && Forgot Password */}
+          <div className="flex justify-between px-1">
+            <div className="flex gap-2 ">
+              <input type="checkbox" id="remember" />
+              <label
+                htmlFor="remember"
+                className="text-gray-500 text-sm cursor-pointer"
+              >
+                Remember me
+              </label>
+            </div>
+            <Link to={"/forgot-password"}>
+              <p className="text-sm text-gray-500 hover:text-black text-right">
+                Forgot password?
+              </p>
+            </Link>
+          </div>
         </div>
 
         {/* ++++++++++ Sign up Button */}
-
-        <div>
+        <div className="h-20 flex flex-col gap-2">
           {authError && (
             <p className="text-sm text-red-600 text-left flex gap-1 items-center">
               <MdOutlineError />
@@ -107,7 +110,8 @@ const SigninForm = () => {
           )}
           <button
             type="submit"
-            className="h-12 w-full bg-blue-600 rounded-lg text-white hover:opacity-90 hover:cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 active:translate-y-1"
+            className="mt-auto h-12 w-full bg-blue-600 rounded-lg text-white hover:opacity-90 hover:cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 active:translate-y-1 "
+            // disabled={!isValid}
           >
             Sign in
           </button>
