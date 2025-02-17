@@ -4,6 +4,7 @@ import { toast } from "sonner"
 
 // Icons
 import { MdOutlineError } from "react-icons/md"
+import ErrorMessage from "../../shared/ErrorMessage"
 
 const SigninForm = () => {
   // Auth Error State
@@ -102,12 +103,7 @@ const SigninForm = () => {
 
         {/* ++++++++++ Sign up Button */}
         <div className="h-20 flex flex-col gap-2">
-          {authError && (
-            <p className="text-sm text-red-600 text-left flex gap-1 items-center">
-              <MdOutlineError />
-              {authError}
-            </p>
-          )}
+          {authError && <ErrorMessage message={authError} />}
           <button
             type="submit"
             className="mt-auto h-12 w-full bg-blue-600 rounded-lg text-white hover:opacity-90 hover:cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md active:scale-98 active:translate-y-1 "
